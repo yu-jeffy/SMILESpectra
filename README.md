@@ -19,7 +19,7 @@ The SmilesPE encoder is available on GitHub:
 
 
 
-### Transformer Model
+## Transformer Model
 
 #### Model Architecture
 
