@@ -16,3 +16,31 @@ For ZINC dataset, visit:
 ### SmilesPE
 The SmilesPE encoder is available on GitHub:
 [SmilesPE GitHub Repository](https://github.com/XinhaoLi74/SmilesPE)
+
+
+
+### Transformer Model
+
+#### Model Architecture
+
+The Transformer model is defined in the `TransformerModel` class. Key parameters include:
+- Number of tokens (ntoken)
+- Input dimension (ninp)
+- Number of heads in multihead attention (nhead)
+- Dimension of feedforward network (nhid)
+- Number of transformer layers (nlayers)
+- Dropout rate (dropout)
+
+The model includes positional encoding and uses PyTorch's nn.Transformer module for the core transformer architecture.
+
+#### Training and Evaluation
+
+The model is trained using cross-entropy loss and optimized with Adam. Training involves multiple epochs over the prepared datasets. The model's performance is evaluated on a separate test dataset.
+
+### Datasets and DataLoaders
+
+Custom datasets and data loaders are created for both training and test sets, enabling efficient batch processing during model training.
+
+### Memory Management
+
+Garbage collection and CUDA cache clearing are employed to manage memory, especially when using GPU for training.
