@@ -23,15 +23,7 @@ The SmilesPE encoder is available on GitHub:
 
 #### Model Architecture
 
-The Transformer model is defined in the `TransformerModel` class. Key parameters include:
-- Number of tokens (ntoken)
-- Input dimension (ninp)
-- Number of heads in multihead attention (nhead)
-- Dimension of feedforward network (nhid)
-- Number of transformer layers (nlayers)
-- Dropout rate (dropout)
-
-The model includes positional encoding and uses PyTorch's nn.Transformer module for the core transformer architecture.
+The `TransformerModel` in the code is a PyTorch-based architecture designed for chemical data processing. Its structure includes an embedding layer (`nn.Embedding`) with a vocabulary size of `ntoken=3002` and an input dimension of `ninp=1024`. The model utilizes a transformer core (`nn.Transformer`) configured with `nhead=16` heads in its multi-head attention mechanism, `nhid=4096` dimensions in its feedforward network, and `nlayers=12` encoder and decoder layers. A dropout rate of `dropout=0.2` is applied for regularization. Positional encoding is integrated to maintain sequence order, essential for transformer models. The output is mapped back to token space through a linear layer (`nn.Linear`).
 
 #### Training and Evaluation
 
@@ -39,8 +31,7 @@ The model is trained using cross-entropy loss and optimized with Adam. Training 
 
 ### Datasets and DataLoaders
 
-Custom datasets and data loaders are created for both training and test sets, enabling efficient batch processing during model training.
-
+Custom datasets and data loaders are created for both training and test sets, which batch the data into smaller sizes for processing.
 ### Memory Management
 
 Garbage collection and CUDA cache clearing are employed to manage memory, especially when using GPU for training.
